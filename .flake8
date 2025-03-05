@@ -1,0 +1,8 @@
+[flake8]
+extend-ignore = W503,W504,E226
+max-line-length = 150
+indent-size = 4
+select = E,F,W
+exclude =
+    src/common/galleon/legacy/galleonexporter.py,
+    src/build/

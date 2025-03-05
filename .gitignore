@@ -1,0 +1,17 @@
+*.pyc
+*.DS_Store
+*.sublime-workspace
+.venv
+**/env*
+!**/env.py
+!**/env.example*
+.vscode
+*.coverage
+htmlcov/
+coverage.xml
+*.dump
+node_modules/*
+cdk.out
+**.egg-info
+**build/
+accounts/dev/variables.json

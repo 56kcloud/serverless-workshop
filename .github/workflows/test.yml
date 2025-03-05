@@ -1,0 +1,36 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '**'
+  pull_request:
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Python dependencies
+        run: |
+          python3.9 -m pip install -r requirements-ci.txt
+
+      - name: Test Base Infrastructure
+        run: |
+          python3.9 -m pytest test.py --cov=. --cov-report=xml:/home/runner/.base_infra_codecov.xml

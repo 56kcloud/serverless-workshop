@@ -1,0 +1,6 @@
+# only include the dependencies to build the API Lambda package
+-r requirements.txt
+
+envdir==1.0.1
+pytest==8.3.5
+pytest-cov==6.0.0
