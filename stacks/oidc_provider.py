@@ -31,6 +31,22 @@ class OidcProviderStack(Stack):
             ),
             max_session_duration=Duration.hours(1),
             managed_policies=[
-                iam.ManagedPolicy.from_aws_managed_policy_name("AdministratorAccess")
+                iam.ManagedPolicy.from_aws_managed_policy_name("AWSCloudFormationFullAccess"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("AWSLambda_FullAccess"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonAPIGatewayAdministrator"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonSSMFullAccess"),
+                iam.ManagedPolicy.from_aws_managed_policy_name("AmazonS3FullAccess"),
             ]
         )
+
+        self.role.add_to_policy(iam.PolicyStatement(
+            actions=[
+                "cloudformation:*",
+                "s3:*",
+                "iam:*",
+                "lambda:*",
+                "logs:*"
+            ],
+            resources="*"
+
+        ))

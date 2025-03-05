@@ -16,7 +16,7 @@ def handle(event, context):
         return {
             'statusCode': 200,
             'headers': {'Content-Type': 'application/json'},
-            'body': json.dumps({"message": f"hello {team} !"})
+            'body': json.dumps({"message": f"Hello {team} !"})
         }
     else:
         return {
