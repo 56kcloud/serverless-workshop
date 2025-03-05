@@ -47,6 +47,6 @@ class OidcProviderStack(Stack):
                 "lambda:*",
                 "logs:*"
             ],
-            resources="*"
+            resources=["*"]
 
         ))
