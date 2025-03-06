@@ -9,13 +9,13 @@ from stacks.oidc_provider import OidcProviderStack
 
 
 env = cdk.Environment(
-    region='eu-central-2'
+    region='eu-central-2' # Zurich
 )
 
 app = cdk.App()
 
 app.stage = environ.get('STAGE', 'dev')
-app.team = environ.get('TEAM', 'main')
+app.team = environ.get('TEAM', 'alpha')
 
 if app.team == 'main':
     OidcProviderStack(

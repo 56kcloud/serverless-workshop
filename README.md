@@ -42,7 +42,8 @@ In addition to these, your system must be properly configured with AWS credentia
 Run Python tests to ensure everything is functioning correctly:
 
 ```bash
-python -m pytest -v test.py --cov=stacks --cov-report=html
+python -m pytest -v tests/test_infra.py --cov=stacks --cov-report=html
+python -m unittest tests/test_handler.py --cov=stacks --cov-report=html
 ```
 
 ## Deployment

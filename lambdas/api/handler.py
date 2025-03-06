@@ -4,7 +4,7 @@ from os import environ
 
 def handle(event, context):
     path = event.get('path', '')
-    team = environ['TEAM']
+    team = environ.get('TEAM', 'main')
 
     if path == '/':
         return {
@@ -24,3 +24,13 @@ def handle(event, context):
             'headers': {'Content-Type': 'application/json'},
             'body': json.dumps({"message": "Not Found"})
         }
+
+if __name__ == "__main__":
+    event = {
+        "path": "/hello",
+        "httpMethod": "GET",
+        "headers": {},
+        "body": None,
+        "isBase64Encoded": False
+    }
+    print(handle(event, {}))
