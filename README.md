@@ -6,59 +6,77 @@
 
 ## Overview
 
-This repository contains the infrastructure for the Serverless Workshop, which aims to provide a hands-on experience with serverless architecture using AWS services. The project utilizes AWS CDK (Cloud Development Kit) to define cloud infrastructure as code.
+This repository contains infrastructure-as-code and the application code for the Serverless Workshop, which aims to provide a hands-on experience with serverless architecture using AWS services. The project utilizes AWS CDK (Cloud Development Kit) to define cloud infrastructure as code.
 
 ## Prerequisites
 
-Ensure that your development environment is set up with the following tools:
+You will need a GitHub account. If you haven't got one, it's time to [sign up](https://github.com/signup).
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Node.js 22](https://nodejs.org/en/download/)
-- [Python 3.9](https://www.python.org/downloads/)
-- [AWS CDK Toolkit](https://docs.aws.amazon.com/cdk/v2/guide/cli.html)
-- [AWS Command Line Interface](https://aws.amazon.com/cli/)
+If you are working on a Windows machine, we recommend using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-In addition to these, your system must be properly configured with AWS credentials, possessing necessary permissions to deploy the service. For a seamless AWS credential management experience, we recommend using [aws-vault](https://github.com/99designs/aws-vault).
+Then ensure you have a Python interpreter installed and the Git Command Line Interface:
 
-## Setting Up the Local Development Environment
+- [Python 3.9 or higher](https://www.python.org/downloads/)
+- [Git](https://github.com/git-guides/install-git)
+
+## Lab #1
 
 1. Start by cloning this repository:
-
+    
     ```bash
     git clone git@github.com:56kcloud/serverless-workshop.git
+    cd serverless-workshop
     ```
 
-2. Create a virtual Python environment and install dependencies:
+2. Create a new branch with your UNIQUE team name:
 
     ```bash
-    cd serverless-workshop
+    git checkout -b <your-unique-team-name>
+    ```
+
+3. Define an environment variable with your team name:
+
+    ```bash
+    export TEAM=$(git rev-parse --abbrev-ref HEAD)
+    ```
+
+4. Create a virtual Python environment and install dependencies:
+
+    ```bash
     python3.9 -m venv .venv
     source .venv/bin/activate
     pip install -r requirements-dev.txt
     ```
 
-## Testing
+5. Run application unit tests:
 
-Run Python tests to ensure everything is functioning correctly:
+    ```bash
+    python -m unittest tests/test_handler.py 
+    ```
 
-```bash
-python -m pytest -v tests/test_infra.py --cov=stacks --cov-report=html
-python -m unittest tests/test_handler.py --cov=stacks --cov-report=html
-```
+    Fix the failing tests if any.
 
-## Deployment
+6. Commit
 
-### Bootstrapping
+    ```bash
+    git commit -a -m "Fixed unit tests"
 
-To deploy AWS CDK apps into an AWS [environment](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping.html), you will need to provision the necessary resources. Run the following command:
+7. Push
 
-```bash
-aws-vault exec shared-services-full-access -- cdk bootstrap
-```
+    ```bash
+    git push -u origin <your-unique-team-name>
+    ```
 
-### Live Infrastructure Deployment
+8. Deploy
 
-Please note that the deployment process is automatically triggered via a GitHub action when changes are pushed to the `serverless-workshop` repository.
+Open a browser and navigate to GitHub Actions to see the deployment progress.    
+
+    https://github.com/56kcloud/serverless-workshop/actions
+
+
+When the deployment completes, find the URL of the API you just deployed and copy/paste it in a new browser windows. You should see:
+
+
 
 ## Contributing
 
