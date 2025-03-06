@@ -38,3 +38,5 @@ jobs:
       - name: Test Lambda Handler
         run: |
           python3.9 -m pytest tests/test_handler.py
+        env:
+          TEAM: ${{ github.ref_name }}
