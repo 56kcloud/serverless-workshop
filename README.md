@@ -69,19 +69,19 @@ Then ensure you have a Python interpreter installed and the Git Command Line Int
 
 8. Deploy
 
-Open a browser and navigate to GitHub Actions to see the deployment progress.    
+    Open a browser and navigate to GitHub Actions to see the deployment progress.    
 
     https://github.com/56kcloud/serverless-workshop/actions
 
 
-When the deployment completes, find the URL of the API you just deployed (look for the "Deploying" step in the workflow output logs), there should be block similar to:
+    When the deployment completes, find the URL of the API you just deployed (look for the "Deploying" step in the workflow output logs), there should be block similar to:
 
     ```
     Outputs:
         ProtectedApiStack.LambdaEndpoint = https://t95f7quxma.execute-api.eu-central-2.amazonaws.com/dev/
     ```
 
- and copy/paste the url in a new browser window. You should see the following message:
+    and copy/paste the url in a new browser window. You should see the following message:
 
     ```
     {"message": "Welcome to the API <your-unique-team-name>!"}
