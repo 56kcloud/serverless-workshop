@@ -6,15 +6,13 @@
 
 ## Overview
 
-This repository contains infrastructure-as-code and the application code for the Serverless Workshop, which aims to provide a hands-on experience with serverless architecture using AWS services. The project utilizes AWS CDK (Cloud Development Kit) to define cloud infrastructure as code.
+This repository contains infrastructure and application code for a Serverless Workshop, which aims to provide a hands-on experience with serverless architecture using AWS services. The project utilizes AWS CDK (Cloud Development Kit) to define cloud infrastructure as code.
 
 ## Prerequisites
 
-You will need a GitHub account. If you haven't got one, it's time to [sign up](https://github.com/signup).
+> If you are working on a Windows machine, we recommend using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install).
 
-If you are working on a Windows machine, we recommend using [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/install).
-
-Then ensure you have a Python interpreter installed and the Git Command Line Interface:
+Ensure the following tools are installed:
 
 - [Python 3.9 or higher](https://www.python.org/downloads/)
 - [Git](https://github.com/git-guides/install-git)
