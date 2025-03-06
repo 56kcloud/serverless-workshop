@@ -33,4 +33,8 @@ jobs:
 
       - name: Test Base Infrastructure
         run: |
-          python3.9 -m pytest test.py --cov=. --cov-report=xml:/home/runner/.base_infra_codecov.xml
+          python3.9 -m pytest tests/test_infra.py
+
+      - name: Test Lambda Handler
+        run: |
+          python3.9 -m pytest tests/test_handler.py
