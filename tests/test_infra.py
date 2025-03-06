@@ -62,7 +62,7 @@ def test_api_stack(app, api_stack):
     r = {
         'FunctionName': f'{app.team}-api',
         'MemorySize': 256,
-        'Runtime': 'python3.9',
+        'Runtime': 'python',
         'TracingConfig': {
             'Mode': 'Active'
         }
