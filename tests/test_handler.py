@@ -8,7 +8,7 @@ class TestHandler(unittest.TestCase):
         event = {"path": "/", "httpMethod": "GET"}
         response = handle(event, {})
         self.assertEqual(response['statusCode'], 200)
-        self.assertEqual(response['body'], '{"message": "Welcome to the API main!"}')
+        self.assertEqual(response['body'], '{"message": "Welcome to the API toman!"}')
 
     def test_hello_path(self):
         event = {"path": "/hello", "httpMethod": "GET"}
