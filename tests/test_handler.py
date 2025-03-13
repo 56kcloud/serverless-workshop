@@ -14,7 +14,7 @@ class TestHandler(unittest.TestCase):
         event = {"path": "/hello", "httpMethod": "GET"}
         response = handle(event, {})
         self.assertEqual(response['statusCode'], 200)
-        self.assertEqual(response['body'], '{"message": "Hello main!"}')
+        self.assertEqual(response['body'], '{"message": "Hello toman!"}')
 
     def test_not_found_path(self):
         event = {"path": "/unknown", "httpMethod": "GET"}
