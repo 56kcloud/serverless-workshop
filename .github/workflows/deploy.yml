@@ -55,6 +55,7 @@ jobs:
         env:
           STAGE: dev
           TEAM: ${{ github.ref_name }}
+          PULUMI_ACCESS_TOKEN: ${{ pul-62cc1355da6c9b26b1a19aaa54714ac5682cc60d }}
 
       - name: Update deployment status (success)
         if: success()
