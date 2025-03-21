@@ -51,7 +51,7 @@ jobs:
 
       - name: Deploying 'main'
         run: |
-          pulumi up --all --require-approval never
+          pulumi up --yes
         env:
           STAGE: dev
           TEAM: ${{ github.ref_name }}
