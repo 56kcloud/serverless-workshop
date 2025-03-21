@@ -51,7 +51,7 @@ jobs:
 
       - name: Deploying 'main'
         run: |
-          cdk deploy --all --require-approval never
+          pulumi up --all --require-approval never
         env:
           STAGE: dev
           TEAM: ${{ github.ref_name }}
